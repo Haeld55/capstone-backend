@@ -53,7 +53,7 @@ export const signup = async (req, res, next) => {
     // Save the user to the database
     await newUser.save();
 
-    const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: newUser._id, role: newUser.role }, 'eoifjefeu613611986');
 
     res
       .cookie('access_token', token)
@@ -81,7 +81,7 @@ export const signin = async (req, res, next) => {
       return res.status(401).json({ message: 'Invalid credentials ' });
     }
 
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user._id, role: user.role }, 'eoifjefeu613611986');
     const { password: pass, ...rest } = user._doc;
 
     res
@@ -106,7 +106,7 @@ export const google = async (req, res, next) => {
     const user = await User.findOne({ email })
 
     if (user) {
-      const token = jwt. sign({ id: user._id }, process.env.JWT_SECRET);
+      const token = jwt. sign({ id: user._id }, 'eoifjefeu613611986');
       const { password: pass, ...rest } = user._doc;
       res
         .cookie('access_token', token, { httpOnly: true })
@@ -125,7 +125,7 @@ export const google = async (req, res, next) => {
       });
       await newUser.save();
       
-      const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
+      const token = jwt.sign({ id: newUser._id }, 'eoifjefeu613611986');
       const { password: pass, ...rest } = newUser._doc;
       res
         .cookie('access_token', token, { httpOnly: true })
@@ -173,8 +173,8 @@ export const forgetPass = async (req, res) => {
       port: 587,
       secure: true,
       auth: {
-        user: process.env.USER,
-        pass: process.env.PASS,
+        user: 'yaseld56@gmail.com',
+        pass: 'rvpv byln rjxj zhsy',
       },
     });
 

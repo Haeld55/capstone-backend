@@ -6,7 +6,7 @@ export const verifyToken = (req, res, next) => {
 
   if (!token) return next(errorHandler(401, 'Unauthorized'));
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  jwt.verify(token, 'eoifjefeu613611986', (err, user) => {
     if (err) return next(errorHandler(403, 'Forbidden'));
 
     req.user = user;
@@ -21,7 +21,7 @@ export const authenticateAdmin = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, 'eoifjefeu613611986');
     if (decoded.role !== 'admin') {
       return res.status(403).json({ message: 'Forbidden' });
     }

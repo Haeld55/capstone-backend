@@ -343,8 +343,8 @@ import Nexmo from 'nexmo'
 import dotenv from 'dotenv'
 dotenv.config();
 
-const apiKey1 = process.env.apiKey;
-const apiSecret1 = process.env.apiSec;
+const apiKey1 = 'aab224a4';
+const apiSecret1 = 'Bhm5NiOLAjDl4ZYn';
 
 const nexmo = new Nexmo({
   apiKey: apiKey1,

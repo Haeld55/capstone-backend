@@ -15,7 +15,7 @@ import cors from 'cors'
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect('mongodb+srv://admin:testAdmin123@cluster0.q3x7djq.mongodb.net/laundry')
   .then(() => {
     console.log('Connected to MongoDB!');
   })
