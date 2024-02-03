@@ -11,6 +11,7 @@ import userOrderRoute from './routes/userOrderRoute.js'
 import serviceRoute from './routes/serviceRoute.js'
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import cors from 'cors'
 dotenv.config();
 
 mongoose
@@ -26,6 +27,7 @@ mongoose
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use(cookieParser());
